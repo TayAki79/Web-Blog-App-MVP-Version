@@ -9,7 +9,7 @@
 <body>
   <h1>Welcome to my Minimal Blog App!</h1>
   <% if (posts.length === 0) { %>
-    <h2>We have no posts!</h2>
+    <h2>We have no Posts!</h2>
   <% } else { %>
     <h2>Recent Posts</h2>
     <ul>
@@ -18,6 +18,7 @@
         <li><%= item.content %></li>
       <% }); %>
     </ul>
+    <a href="/views/edit.ejs">Edit Post</a>
   <% } %>
   <form action="/posts" method="post">
     <label for="title">Post title</label>
