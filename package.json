@@ -1,0 +1,26 @@
+{
+  "name": "web-blog-app-mvp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TayAki79/Web-Blog-App-MVP-Version.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TayAki79/Web-Blog-App-MVP-Version/issues"
+  },
+  "homepage": "https://github.com/TayAki79/Web-Blog-App-MVP-Version#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
