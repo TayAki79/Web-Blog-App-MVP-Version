@@ -8,6 +8,13 @@
 </head>
 <body>
   <h1>Welcome to my Minimal Blog App!</h1>
+  <h2>Recent Posts</h2>
+  <ul>
+    <% posts.forEach( item => { %>
+      <li><%= item.title %></li>
+      <li><%= item.content %></li>
+    <% }); %>
+  </ul>
   <form action="/posts" method="post">
     <label for="title">Post title</label>
     <input type="text" name="title" id="title" required>
