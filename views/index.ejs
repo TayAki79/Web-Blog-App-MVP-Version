@@ -1,31 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/public/styles.css">
-  <title>Blog-MVP</title>
-</head>
-<body>
-  <h1>Welcome to my Minimal Blog App!</h1>
-  <% if (posts.length === 0) { %>
-    <h2>We have no Posts!</h2>
-  <% } else { %>
-    <h2>Recent Posts</h2>
-    <ul>
-      <% posts.forEach( item => { %>
-        <li><%= item.title %></li>
-        <li><%= item.content %></li>
-      <% }); %>
-    </ul>
-    <a href="/views/edit.ejs">Edit Post</a>
-  <% } %>
-  <form action="/posts" method="post">
-    <label for="title">Post title</label>
-    <input type="text" name="title" id="title" required>
-    <label for="content">Post content</label>
-    <textarea name="content" id="content" required></textarea>
-    <button type="submit">Submit Post</button>
-  </form>
-</body>
-</html>
+<%- include("partials/header.ejs")%>
+
+<h1>Welcome to my Minimal Blog App!</h1>
+<% if (posts.length === 0) { %>
+<h2>We have no Posts!</h2>
+<% } else { %>
+<h2>Recent Posts</h2>
+<ul>
+  <% posts.forEach( item => { %>
+  <li>
+    <%= item.title %><br />
+    <%= item.content %><br />
+    <a href="/edit?id=<%= item.id %>>">Edit Post</a>
+  </li>
+  <% }); %>
+</ul>
+<% } %>
+<form action="/posts" method="post">
+  <label for="title">Post title</label>
+  <input type="text" name="title" id="title" required />
+  <label for="content">Post content</label>
+  <textarea name="content" id="content" required></textarea>
+  <button type="submit">Submit Post</button>
+</form>
+
+<%- include("partials/footer.ejs")%>
